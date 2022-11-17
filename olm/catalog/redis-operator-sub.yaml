@@ -1,0 +1,12 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: redis-operator-sub
+  namespace: redis-test2
+spec:
+  installPlanApproval: Automatic
+  sourceNamespace: openshift-marketplace
+  source: redis-operator-catalog
+  name: redis-operator
+  channel: stable
+  startingCSV: redis-operator.v0.0.1

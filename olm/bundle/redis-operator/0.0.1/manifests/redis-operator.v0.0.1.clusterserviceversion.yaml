@@ -1,0 +1,209 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  name: redis-operator.v0.0.1
+  namespace: placeholder
+  annotations:
+    alm-examples: >-
+      [{"apiVersion":"databases.spotahome.com/v1","kind":"RedisFailover","metadata":{"annotations":{},"name":"redisfailover","namespace":"redis-sentinel"},"spec":{"redis":{"replicas":3,"resources":{"limits":{"cpu":"400m","memory":"500Mi"},"requests":{"cpu":"100m","memory":"100Mi"}}},"sentinel":{"replicas":3,"resources":{"limits":{"memory":"100Mi"},"requests":{"cpu":"100m"}}}}}]
+    k8sMinVersion: ''
+    k8sMaxVersion: ''
+    categories: 'Database, Streaming & Messaging'
+    certified: 'false'
+    createdAt: ''
+    description: This just a test
+    containerImage: ''
+    support: ''
+    capabilities: Basic Install
+    repository: ''
+spec:
+  displayName: Redis Operator
+  description: |+
+    This is a operator test for redis sentinel
+    This is a operator test for redis sentinel, details.....
+    prerequiites is nothing
+
+  maturity: stable
+  version: 0.0.1
+  replaces: ''
+  skips: []
+  minKubeVersion: 1.17.0
+  keywords: []
+  maintainers:
+    - name: sean.liu
+      email: sean.liu@embracesource.com
+  provider:
+    name: sean.liu
+  labels:
+    gzky: redis-test
+  selector:
+    matchLabels:
+      redis-sentinel: redis-sentinel
+  links:
+    - name: github
+      url: 'https://github.com/spotahome/redis-operator'
+  icon:
+    - base64data: >-
+        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
+      mediatype: image/png
+  customresourcedefinitions:
+    owned:
+      - name: redisfailovers.databases.spotahome.com
+        displayName: RedisFailover
+        kind: RedisFailover
+        version: v1
+        description: Redis Failover
+        resources:
+          - version: v1
+            kind: Deployment
+          - version: v1
+            kind: Service
+          - version: v1
+            kind: ReplicaSet
+          - version: v1
+            kind: Pod
+          - version: v1
+            kind: Secret
+          - version: v1
+            kind: ConfigMap
+        specDescriptors: []
+        statusDescriptors: []
+    required: []
+  install:
+    strategy: deployment
+    spec:
+      permissions:
+        - serviceAccountName: redis-operator
+          rules:
+            - apiGroups:
+                - databases.spotahome.com
+              resources:
+                - redisfailovers
+                - redisfailovers/finalizers
+              verbs:
+                - '*'
+            - apiGroups:
+                - apiextensions.k8s.io
+              resources:
+                - customresourcedefinitions
+              verbs:
+                - '*'
+            - apiGroups:
+                - coordination.k8s.io
+              resources:
+                - leases
+              verbs:
+                - create
+                - get
+                - list
+                - update
+            - apiGroups:
+                - ''
+              resources:
+                - pods
+                - services
+                - endpoints
+                - events
+                - configmaps
+                - secrets
+                - persistentvolumeclaims
+                - persistentvolumeclaims/finalizers
+              verbs:
+                - '*'
+            - apiGroups:
+                - apps
+              resources:
+                - deployments
+                - statefulsets
+              verbs:
+                - '*'
+            - apiGroups:
+                - policy
+              resources:
+                - poddisruptionbudgets
+              verbs:
+                - '*'
+      clusterPermissions:
+        - serviceAccountName: redis-operator
+          rules:
+            - apiGroups:
+                - databases.spotahome.com
+              resources:
+                - redisfailovers
+                - redisfailovers/finalizers
+              verbs:
+                - '*'
+            - apiGroups:
+                - apiextensions.k8s.io
+              resources:
+                - customresourcedefinitions
+              verbs:
+                - '*'
+            - apiGroups:
+                - coordination.k8s.io
+              resources:
+                - leases
+              verbs:
+                - create
+                - get
+                - list
+                - update
+            - apiGroups:
+                - ''
+              resources:
+                - pods
+                - services
+                - endpoints
+                - events
+                - configmaps
+                - secrets
+                - persistentvolumeclaims
+                - persistentvolumeclaims/finalizers
+              verbs:
+                - '*'
+            - apiGroups:
+                - apps
+              resources:
+                - deployments
+                - statefulsets
+              verbs:
+                - '*'
+            - apiGroups:
+                - policy
+              resources:
+                - poddisruptionbudgets
+              verbs:
+                - '*'
+      deployments:
+        - name: redis-operator
+          spec:
+            replicas: 1
+            selector:
+              matchLabels:
+                k8s-app: redis-operator
+            template:
+              metadata:
+                labels:
+                  k8s-app: redis-operator
+              spec:
+                containers:
+                  - image: 'quay.io/spotahome/redis-operator:latest'
+                    imagePullPolicy: Always
+                    name: redis-operator
+                    resources:
+                      limits:
+                        cpu: 200m
+                        memory: 100Mi
+                      requests:
+                        cpu: 100m
+                        memory: 50Mi
+                serviceAccountName: redis-operator
+  installModes:
+    - type: OwnNamespace
+      supported: true
+    - type: SingleNamespace
+      supported: true
+    - type: MultiNamespace
+      supported: false
+    - type: AllNamespaces
+      supported: false

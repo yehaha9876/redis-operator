@@ -1,0 +1,5 @@
+packageName: redis-operator
+defaultChannel: stable
+channels:
+  - name: stable
+    currentCSV: redis-operator.v0.0.2

@@ -1,0 +1,8 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: redis-test2-cg49s
+  namespace: redis-test2
+spec:
+  targetNamespaces:
+  - redis-test2

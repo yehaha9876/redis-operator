@@ -1,0 +1,24 @@
+apiVersion: databases.spotahome.com/v1
+kind: RedisFailover
+metadata:
+  name: redisfailover
+  namespace: redis-test2
+spec:
+  sentinel:
+    replicas: 3
+    image: harbor.gzky.com/redis-operator/redis:6.2.6-alpine
+    resources:
+      requests:
+        cpu: 100m
+      limits:
+        memory: 100Mi
+  redis:
+    replicas: 3
+    image: harbor.gzky.com/redis-operator/redis:6.2.6-alpine
+    resources:
+      requests:
+        cpu: 100m
+        memory: 100Mi
+      limits:
+        cpu: 400m
+        memory: 500Mi
