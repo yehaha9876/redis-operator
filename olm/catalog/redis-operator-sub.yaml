@@ -9,4 +9,4 @@ spec:
   source: redis-operator-catalog
   name: redis-operator
   channel: stable
-  startingCSV: redis-operator.v0.0.1
+  startingCSV: redis-operator.v0.0.2
